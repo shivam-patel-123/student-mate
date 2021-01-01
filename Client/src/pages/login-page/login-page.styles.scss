@@ -1,0 +1,25 @@
+@import 'variables.scss';
+
+.login-page {
+    &__header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 1.6rem;
+        padding-bottom: 1.6rem;
+        border-bottom: 1px solid $color-grey-2;
+
+        &-logo {
+            cursor: pointer;
+        }
+    }
+
+    &__content {
+        height: 65vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

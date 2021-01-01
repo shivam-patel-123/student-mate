@@ -1,0 +1,63 @@
+@import 'variables.scss';
+@import 'typography.scss';
+
+.subject {
+    &-details {
+        background-color: transparent;
+        padding: 4rem 2.4rem 4rem 4rem;
+        margin: 0.8rem 0;
+        cursor: pointer;
+
+        .subject-details-students {
+            display: flex;
+            align-items: center;
+
+            .students-photo {
+                display: flex;
+                margin-right: 0.8rem;
+
+                .student {
+                    border-radius: 50%;
+                    width: 3rem;
+                    height: 3rem;
+                    background-color: $color-grey-3;
+                    border: 2px solid $color-grey-1;
+                }
+
+                .student:not(:first-child) {
+                    margin-left: -1rem;
+                }
+            }
+
+            .students-info {
+                .student-number {
+                    margin-right: 0.4rem;
+                    font-weight: 600;
+                    letter-spacing: -1px;
+                }
+
+                .student-label {
+                }
+            }
+        }
+    }
+
+    .subject-active {
+        position: relative;
+        background-color: white;
+        border-radius: $border-radius;
+        width: 100%;
+        box-shadow: 0 0.8rem 2.4rem rgba(55, 84, 170, 0.16);
+
+        // &::before {
+        //     content: '';
+        //     position: absolute;
+        //     bottom: 0;
+        //     margin: 0 auto;
+        //     width: 75%;
+        //     height: 50%;
+        //     z-index: -1;
+        //     box-shadow: 0 0.8rem 2.4rem rgba(55, 84, 170, 0.16);
+        // }
+    }
+}

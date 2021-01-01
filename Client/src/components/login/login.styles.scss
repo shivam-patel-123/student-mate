@@ -1,0 +1,13 @@
+@import 'variables.scss';
+// @import 'typography.scss';
+
+.login {
+    display: inline-block;
+    width: auto;
+    text-align: center;
+
+    .heading-h1--login {
+        text-align: center;
+        padding: 0.8rem;
+    }
+}

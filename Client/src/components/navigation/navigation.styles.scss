@@ -1,0 +1,20 @@
+@import 'variables.scss';
+
+.navigation {
+    height: 100vh;
+    padding: 2.4rem 0;
+    background-color: $color-grey-1;
+
+    &__logo {
+        padding: 0 2rem;
+    }
+
+    &__content {
+        width: 100%;
+        margin-top: 3.2rem;
+
+        .menu-items {
+            list-style-type: none;
+        }
+    }
+}

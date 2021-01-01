@@ -1,0 +1,27 @@
+.dashboard {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: [nav-start] minmax(min-content, 250px) [nav-end content-start] 1fr [content-end];
+    grid-template-rows: [header-start] min-content [header-end content-start] 1fr [content-end];
+
+    &__navigation {
+        grid-column: nav-start / nav-end;
+        grid-row: header-start / content-end;
+    }
+
+    &__header {
+        position: relative;
+        z-index: 10;
+        grid-column: content-start / nav-end;
+        grid-row: header-start / header-end;
+    }
+
+    &__content {
+        position: relative;
+        z-index: 1;
+        grid-column: content-start / content-end;
+        grid-row: content-start / content-end;
+    }
+}
