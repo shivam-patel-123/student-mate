@@ -38,19 +38,10 @@ exports.updateMe = catchAsync(async (req, res, next) => {
 
     if (req.file) filteredBody.photo = req.file.filename;
 
-    let user;
-
-    if (req.user.role === 'student') {
-        user = await Student.findByIdAndUpdate(req.user.id, filteredBody, {
-            new: true,
-            runValidators: true,
-        });
-    } else if (req.user.role === 'faculty') {
-        user = await Faculty.findByIdAndUpdate(req.user.id, filteredBody, {
-            new: true,
-            runValidators: true,
-        });
-    }
+    const user = await User.findByIdAndUpdate(req.user.id, filteredBody, {
+        new: true,
+        runValidators: true,
+    });
 
     res.status(200).json({
         status: 'success',

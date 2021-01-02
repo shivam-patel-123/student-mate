@@ -2,6 +2,7 @@ const express = require('express');
 
 const userController = require('../Controllers/userConroller');
 const authController = require('../Controllers/authController');
+
 const studentRouter = require('../Routes/studentRoutes');
 const facultyRouter = require('../Routes/facultyRoutes');
 
@@ -13,5 +14,7 @@ router.use('/faculty', facultyRouter);
 router.route('/signup').post(authController.signupUser);
 router.route('/login').post(authController.loginUser);
 router.route('/logout').get(authController.logoutUser);
+
+router.route('/me').patch(authController.protect, userController.uploadUserPhoto, userController.updateMe);
 
 module.exports = router;
