@@ -10,7 +10,7 @@ const subjectSchema = new mongoose.Schema({
         type: Number,
         required: [true, 'Subject must belong to any semester'],
         min: [1, 'Semester must be greater than 1'],
-        max: [8, 'Semester cannot be greater than 8'],
+        max: [8, 'Semester cannot be less than 8'],
     },
     syllabus: [
         // Each object refers to one UNIT

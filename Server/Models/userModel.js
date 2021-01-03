@@ -62,12 +62,18 @@ const userSchema = new mongoose.Schema({
             ref: 'Subject',
         },
     ],
+    department: {
+        type: mongoose.Schema.ObjectId,
+        required: [true, 'User must belong to any department'],
+    },
+    semester: mongoose.Schema.ObjectId,
 });
 
 userSchema.pre('save', function (next) {
     if (this.role === 'faculty') {
         this.enrollmentNumber = undefined;
         this.academicYear = undefined;
+        this.semester = undefined;
     }
     next();
 });

@@ -1,4 +1,5 @@
 const Subject = require('../Models/subjectModel');
+const Department = require('../Models/departmentModel');
 const AppError = require('../Utils/appError');
 const catchAsync = require('../Utils/catchAsync');
 
@@ -35,6 +36,20 @@ exports.createSubject = catchAsync(async (req, res, next) => {
         faculty,
         students,
     });
+
+    // PUSH SUBJECT ID TO PARTICULAR SEMESTER INSIDE DEPARTMENT
+    await Department.findOneAndUpdate(
+        { _id: req.params.departmentId, 'semesters._id': req.params.semesterId },
+        {
+            $push: {
+                'semesters.$.subjects': subject._id,
+            },
+        },
+        {
+            new: true,
+            runValidators: true,
+        }
+    );
 
     res.status(201).json({
         status: 'success',

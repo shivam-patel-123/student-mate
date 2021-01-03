@@ -1,12 +1,8 @@
 const multer = require('multer');
-const { promisify } = require('util');
 
-const Faculty = require('../Models/facultyModel');
-const Student = require('../Models/studentModel');
 const User = require('../Models/userModel');
 const AppError = require('../Utils/appError');
 const catchAsync = require('../Utils/catchAsync');
-const generateEncryptPassword = require('../Utils/generateEncryptPassword');
 
 const multerStorage = multer.diskStorage({
     destination: (req, file, cb) => {

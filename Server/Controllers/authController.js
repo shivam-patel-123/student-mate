@@ -46,6 +46,8 @@ exports.signupUser = catchAsync(async (req, res, next) => {
         email,
         contactNumber,
         academicYear,
+        department,
+        semester,
     } = req.body;
     const password = generateEncryptPassword();
 
@@ -59,6 +61,8 @@ exports.signupUser = catchAsync(async (req, res, next) => {
         academicYear,
         contactNumber,
         password,
+        department,
+        semester,
     });
 
     createSendToken(user, 201, res);
