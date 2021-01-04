@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
     role: {
         type: String,
         default: 'student',
-        enum: ['student', 'faculty'],
+        enum: ['student', 'faculty', 'admin'],
     },
     enrollmentNumber: {
         type: Number,
@@ -74,6 +74,12 @@ userSchema.pre('save', function (next) {
         this.enrollmentNumber = undefined;
         this.academicYear = undefined;
         this.semester = undefined;
+    } else if (this.role === 'admin') {
+        this.enrollmentNumber = undefined;
+        this.academicYear = undefined;
+        this.semester = undefined;
+        this.subjects = undefined;
+        this.department = undefined;
     }
     next();
 });

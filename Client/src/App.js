@@ -6,6 +6,7 @@ import { createStructuredSelector } from 'reselect';
 import LandingPage from './pages/landing-page/landing-page.component';
 import LoginPage from './pages/login-page/login-page.component';
 import Dashboard from './pages/dashboard/dashboard.component';
+import AdminPanel from './pages/admin-panel/admin-panel.component';
 
 import { selectCurrentUser } from './redux/user/user.selectors';
 
@@ -22,6 +23,12 @@ const App = ({ currentUser }) => {
                     render={() => (currentUser ? <Redirect to='/dashboard' /> : <LoginPage />)}
                 />
                 <Route path='/dashboard' render={() => (currentUser ? <Dashboard /> : <Redirect to='/' />)} />
+                <Route
+                    path='/admin'
+                    render={() =>
+                        currentUser && currentUser.role === 'admin' ? <AdminPanel /> : <LoginPage admin />
+                    }
+                />
             </Switch>
         </div>
     );

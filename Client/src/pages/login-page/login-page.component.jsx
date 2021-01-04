@@ -6,12 +6,10 @@ import Login from '../../components/login/login.component';
 
 import './login-page.styles.scss';
 
-const LoginPage = () => (
+const LoginPage = ({ admin }) => (
     <div className='login-page'>
         <div className='login-page__header'>
-            <Link to='/'>
-                <Logo className='login-page__header-logo' />
-            </Link>
+            <Link to='/'>{admin ? 'ADMIN' : <Logo className='login-page__header-logo' />}</Link>
         </div>
         <div className='login-page__content'>
             <Login />
