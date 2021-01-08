@@ -1,6 +1,9 @@
 @import 'variables.scss';
 
 .login-page {
+    background: linear-gradient(white, $color-grey-1);
+    height: 100vh;
+
     &__header {
         display: flex;
         flex-direction: column;
@@ -16,10 +19,15 @@
     }
 
     &__content {
-        height: 65vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: inline-block;
+        background-color: white;
+        padding: 4rem 6rem;
+        border-radius: 0.8rem;
+        margin: 0 auto;
+        box-shadow: 0 0.4rem 2.4rem rgba(0, 0, 0, 0.1);
     }
 }

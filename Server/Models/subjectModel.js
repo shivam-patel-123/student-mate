@@ -33,20 +33,20 @@ const subjectSchema = new mongoose.Schema({
     faculty: [
         {
             type: mongoose.Schema.ObjectId,
-            ref: 'Faculty',
+            ref: 'User',
         },
     ],
     students: [
         {
             type: mongoose.Schema.ObjectId,
-            ref: 'Student',
+            ref: 'User',
         },
     ],
 });
 
 subjectSchema.pre(/^find/, function (next) {
     this.populate({
-        path: 'faculty',
+        path: 'students faculty',
         select: 'firstName middleName lastName email',
     });
     next();

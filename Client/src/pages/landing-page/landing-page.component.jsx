@@ -10,14 +10,16 @@ import './landing-page.styles.scss';
 
 const LandingPage = ({ setIsStudent, setIsFaculty }) => (
     <div className='home-page'>
-        <Button type='button' onClick={setIsStudent}>
-            <Link to='/login'>Login As Student</Link>
-        </Button>
-        <Button type='button'>
-            <Link to='/login' onClick={setIsFaculty}>
+        <Link to='/login'>
+            <Button type='button' onClick={setIsStudent}>
+                Login As Student
+            </Button>
+        </Link>
+        <Link to='/login'>
+            <Button type='button' onClick={setIsFaculty}>
                 Login As Faculty
-            </Link>
-        </Button>
+            </Button>
+        </Link>
     </div>
 );
 

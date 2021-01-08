@@ -3,7 +3,7 @@
     height: 100vh;
     overflow: hidden;
     display: grid;
-    grid-template-columns: [nav-start] minmax(min-content, 250px) [nav-end content-start] 1fr [content-end];
+    grid-template-columns: [nav-start] max-content [nav-end content-start] 1fr [content-end];
     grid-template-rows: [header-start] min-content [header-end content-start] 1fr [content-end];
 
     &__navigation {
