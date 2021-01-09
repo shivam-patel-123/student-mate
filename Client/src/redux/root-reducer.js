@@ -7,6 +7,7 @@ import headerReducer from './header/header.reducer';
 import subjectReducer from './subject/subject.reducers';
 import facultyReducer from './faculty/faculty.reducer';
 import studentReducer from './student/student.reducer';
+import departmentReducer from './admin/department/department.reducer';
 
 const config = {
     key: 'root',
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
     subject: subjectReducer,
     faculty: facultyReducer,
     student: studentReducer,
+    department: departmentReducer,
 });
 
 export default persistReducer(config, rootReducer);
